@@ -24,7 +24,7 @@ let cityStates = [{
         state: "Texas",
         stateAbbr: "TX",
         cities: ["Austin", "Dallas", "Houston", "San Antonio"]
-    }     
+    }
 ];
 
 window.onload = function () {
@@ -35,7 +35,7 @@ window.onload = function () {
     const stateDropdown = document.getElementById("stateDropdown");
     stateDropdown.onchange = onStateDropdownChanged;
 
-        // connect onchange event handler for cities
+    // connect onchange event handler for cities
     const cityDropdown = document.getElementById("cityDropdown");
     cityDropdown.onchange = onCityDropdownChanged;
 }
@@ -46,7 +46,7 @@ function loadStateDropdown() {
     stateDropdown.onchange = onStateDropdownChanged;
 
     // creates Select One option first
-    let selectOneOption = document.createElement("option"); 
+    let selectOneOption = document.createElement("option");
     selectOneOption.textContent = "Select One...";
     selectOneOption.value = "";
     stateDropdown.appendChild(selectOneOption);
@@ -61,7 +61,7 @@ function loadStateDropdown() {
     // select first state listed by default
     stateDropdown.selectedIndex = 1;
     onStateDropdownChanged();
-  }
+}
 
 function onStateDropdownChanged() {
     // find state dropdown
@@ -93,7 +93,7 @@ function onStateDropdownChanged() {
     let matchingState = cityStates.find(arrayElement => arrayElement.stateAbbr == selectedStateAbbr);
 
     // Add a "Select league first..." <option>
-    let selectOneOption = document.createElement("option"); 
+    let selectOneOption = document.createElement("option");
     selectOneOption.textContent = "Select One...";
     selectOneOption.value = "";
     cityDropdown.appendChild(selectOneOption);
@@ -105,6 +105,7 @@ function onStateDropdownChanged() {
         cityDropdown.appendChild(theOption);
     }
 }
+
 function onCityDropdownChanged() {
     // re-declare HTML elements
     const stateDropdown = document.getElementById("stateDropdown");
@@ -120,7 +121,7 @@ function onCityDropdownChanged() {
 
     // get selected city from dropdown
     let selectedCity = cityDropdown.value;
-    
+
     // selected city is blank if "Select One" option is chosen => exits function
     if (selectedCity == "") {
         return;
@@ -138,7 +139,7 @@ function addSelectStateFirstOptionToCityDropdown() {
     const cityDropdown = document.getElementById("cityDropdown");
 
     // Add a "Select State first..." <option>
-    let selectOneOption = document.createElement("option"); 
+    let selectOneOption = document.createElement("option");
     selectOneOption.textContent = "Select State first...";
     selectOneOption.value = "";
     cityDropdown.appendChild(selectOneOption);
